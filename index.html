@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27 paskaita</title>
+    <style>
+        .melynas {
+            background-color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    </div>
+    <script>
+        "use strict"
+        // Susikurti objektu masyva
+        // * Masyve 100 elementu
+        // * Objekto vidiniai kintamieji: id, vardas
+        // * Vardas reiksme = vardas1,vardas2 ir t.t.
+        // * Id reiksme = 1, 2 ir t.t
+
+        //pagal sukurta objektu masyva, sukurti tiek pat div elementu
+        // kuriuose isvedamas id ir vardas
+        //kas antras div melynas
+
+        //kaip tiek objektu sukurti? -> ciklas for
+        //kaip juos patalpinti i masyva?
+
+
+        //ciklas
+        var container = document.querySelector(".container");
+        var masyvas = [];
+
+        //objektu masyvo kurimas
+        for (var i=0; i < 100; i++){
+            // Vardas reksme = vardas1, vardas2 ir t.t.
+            var masyvoObjektas = {
+                id: i+1,
+                vardas: "vardas" + (i + 1),
+            };
+
+            masyvas.push(masyvoObjektas);
+            // console.log(masyvoObjektas);
+        }
+
+
+
+
+        //tik lyginiai
+        for(var i=0; i<masyvas.length; i++) {
+            var div = document.createElement("div"); //voin
+
+            // var isvedimoElementas = document.querySelector(".kazkas");
+            // isvedimoElementas.innerHTML = kintamasis; - isvedamas rezultatas interpretuojamas kaip HTML - skaido koda
+            // isvedimoElementas.innerTEXT = kintamasis; - isvedamas rezultatas interpretuojamas kaip tekstas - rodo koda
+            div.innerHTML = masyvas[i].id + " " + masyvas[i].vardas;
+
+            if(masyvas[i].id % 2 == 0){
+            console.log(masyvas[i]);
+            div.classList.add("melynas");
+            }
+
+            container.append(div); //append - prikabinti div
+
+        }
+
+    </script>
+</body>
+</html>
